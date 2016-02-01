@@ -3,6 +3,7 @@
 ## Modified from rocker/hadleyverse
 
 FROM rocker/r-devel
+
 MAINTAINER "Francois Michonneau" francois.michonneau@gmail.com
 
 RUN apt-get update \
@@ -17,12 +18,11 @@ RUN apt-get update \
 	       texlive-latex-extra \
 	       texinfo \
     && apt-get clean \
-    && rm -rf /var/lib/apt/lists/ \
-    && cd /usr/share/texlive/texmf-dist \
-    && wget http://mirrors.ctan.org/install/fonts/inconsolata.tds.zip \
-    && unzip inconsolata.tds.zip \
-    && rm inconsolata.tds.zip \
-    && echo "Map zi4.map" >> /usr/share/texlive/texmf-dist/web2c/updmap.cfg \
+    #&& cd /usr/share/texlive/texmf-dist \
+    #&& wget http://mirrors.ctan.org/install/fonts/inconsolata.tds.zip \
+    #&& unzip inconsolata.tds.zip \
+    #&& rm inconsolata.tds.zip \
+    #&& echo "Map zi4.map" >> /usr/share/texlive/texmf-dist/web2c/updmap.cfg \
     && mktexlsr \
     && updmap-sys
 
@@ -55,11 +55,7 @@ RUN apt-get update \
 	       r-cran-rgl \
 	       ssh \
 	       vim \
-    && R CMD javareconf \
-    && apt-get clean \
-    && rm -rf /var/lib/apt/lists/ \
-    && rm -rf /tmp/downloaded_packages/ /tmp/*.rds
-
+    && R CMD javareconf
 
 ## Install needed dependencies
 
@@ -73,7 +69,6 @@ RUN install2.r --error \
 
 RUN install2.r -error \
     -r "https://cran.rstudio.com" \
-    -r "http://www.bioconductor.org/packages/release/bioc" \
     ade4 \
     ape  \
     aRxiv \
