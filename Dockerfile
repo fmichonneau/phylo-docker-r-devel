@@ -13,6 +13,8 @@ RUN apt-get update \
 	       ghostscript \
 	       imagemagick \
 	       lmodern \
+	       pandoc \
+	       pandoc-citeproc \
 	       texlive-fonts-recommended \
 	       texlive-humanities \
 	       texlive-latex-extra \
