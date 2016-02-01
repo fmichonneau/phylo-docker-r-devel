@@ -102,12 +102,15 @@ RUN install2.r --error \
     highr \
     iterators \
     labeling \
+    lattice \
     lubridate \
     markdown \
     MCMCglmm \
     memoise  \
     munsell \
+    nlme \
     NLP \
+    nnet \
     phylobase \
     plyr \
     praise \
@@ -135,6 +138,7 @@ RUN install2.r --error \
     scales \
     slam \
     solr \
+    survival \
     taxize \
     tensorA \
     tidyr \
