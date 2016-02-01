@@ -67,8 +67,9 @@ RUN install2.r --error \
     testthat \
     xml2
 
-RUN install2.r -error \
+RUN install2.r --error \
     -r "https://cran.rstudio.com" \
+    -r "http://www.bioconductor.org/packages/release/bioc" \
     ade4 \
     ape  \
     aRxiv \
