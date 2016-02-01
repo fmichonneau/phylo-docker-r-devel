@@ -61,7 +61,8 @@ RUN apt-get update \
     && rm -rf /tmp/downloaded_packages/ /tmp/*.rds
 
 
-##
+## Install needed dependencies
+
 RUN install2.r --error \
     devtools \
     git2r \
