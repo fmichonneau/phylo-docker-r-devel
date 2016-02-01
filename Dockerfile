@@ -148,6 +148,9 @@ RUN install2.r --error \
     yaml \
     && rm -rf /tmp/downloaded_packages/ /tmp/*.rds
 
+## For some reason, lattice in non standard location is also needed:
+RUN install2.r lattice -l /usr/local/lib/R/library/
+
 ## httr authentication uses this port
 EXPOSE 1410
 ENV HTTR_LOCALHOST 0.0.00.
