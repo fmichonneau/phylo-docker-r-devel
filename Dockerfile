@@ -94,7 +94,9 @@ RUN install2.r --error \
     dplyr \
     foreach \
     formatR \
+    fulltext \
     ggplot2 \
+    gdata \
     git2r \
     gtable \
     highr \
