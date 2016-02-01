@@ -127,6 +127,7 @@ RUN install2.r -error \
     RNeXML \
     rncl \
     roxygen2 \
+    rotl \
     rplos \
     rredis \
     rstudioapi \
