@@ -2,7 +2,7 @@
 
 ## Modified from rocker/hadleyverse
 
-FROM rocker/r-devel
+FROM rocker/drd
 
 MAINTAINER "Francois Michonneau" francois.michonneau@gmail.com
 
