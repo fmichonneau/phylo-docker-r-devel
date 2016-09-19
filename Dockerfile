@@ -101,6 +101,7 @@ RUN install2.r --error \
     gtable \
     highr \
     iterators \
+    jsonlite \
     labeling \
     lattice \
     lubridate \
