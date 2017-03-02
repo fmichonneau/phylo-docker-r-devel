@@ -43,7 +43,6 @@ RUN apt-get update \
 	       libgeos-c1v5 \
 	       librdf0-dev \
 	       libssl-dev \
-	       libmysqlclient-dev \
 	       libpq-dev \
 	       libsqlite3-dev \
 	       libv8-dev \
@@ -150,7 +149,7 @@ RUN install2.r --error \
     && rm -rf /tmp/downloaded_packages/ /tmp/*.rds
 
 ## For some reason, lattice in non standard location is also needed:
-RUN install2.r lattice -l /usr/local/lib/R/library/
+RUN LIBLOC=/usr/local/lib/R/library install2.r lattice
 
 ## httr authentication uses this port
 EXPOSE 1410
