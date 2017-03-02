@@ -44,6 +44,7 @@ RUN apt-get update \
 	       librdf0-dev \
 	       libssl-dev \
 	       libpq-dev \
+	       libgit2-dev \
 	       libsqlite3-dev \
 	       libv8-dev \
 	       libxcb1-dev \
@@ -118,6 +119,7 @@ RUN install2.r --error \
     R.methodsS3 \
     R.oo \
     R.utils \
+    R6 \
     RColorBrewer \
     Rcpp \
     readxl \
