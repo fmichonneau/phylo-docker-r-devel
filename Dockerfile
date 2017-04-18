@@ -83,6 +83,7 @@ RUN install2.r --error \
     caTools \
     chron \
     coda \
+    codetools \
     colorspace \
     corpcor \
     crayon \
@@ -90,6 +91,7 @@ RUN install2.r --error \
     data.table \
     DBI \
     devtools \
+    evaluate \
     dichromat \
     dplyr \
     foreach \
