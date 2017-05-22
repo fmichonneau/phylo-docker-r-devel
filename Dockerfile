@@ -102,6 +102,7 @@ RUN install2.r --error \
     git2r \
     gtable \
     highr \
+    htmltools \
     iterators \
     jsonlite \
     labeling \
@@ -146,6 +147,7 @@ RUN install2.r --error \
     taxize \
     tensorA \
     tidyr \
+    tidyverse \
     tm   \
     uuid \
     XML \
