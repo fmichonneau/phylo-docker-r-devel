@@ -41,6 +41,7 @@ RUN apt-get update \
 	       libgdal-dev \
 	       libgeos-dev \
 	       libgeos-c1v5 \
+	       libpoppler-cpp-dev \
 	       librdf0-dev \
 	       libssl-dev \
 	       libpq-dev \
