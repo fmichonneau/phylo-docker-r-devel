@@ -58,102 +58,12 @@ RUN apt-get update \
 	       r-cran-rgl \
 	       ssh \
 	       vim \
-    && R CMD javareconf
+    && R CMD javareconf \
+    && RD CMD javareconf
+
 
 ## Install needed dependencies
-
-RUN install2.r --error \
-    devtools \
-    git2r \
-    knitr \
-    rmarkdown \
-    testthat \
-    xml2
-
-RUN install2.r --error \
-    -r "https://cran.rstudio.com" \
-    -r "http://www.bioconductor.org/packages/release/bioc" \
-    ade4 \
-    ape  \
-    aRxiv \
-    assertthat \
-    bibtex \
-    bitops \
-    bold \
-    brew \
-    caTools \
-    chron \
-    coda \
-    codetools \
-    colorspace \
-    corpcor \
-    crayon \
-    cubature \
-    data.table \
-    DBI \
-    devtools \
-    evaluate \
-    dichromat \
-    dplyr \
-    foreach \
-    formatR \
-    fulltext \
-    ggplot2 \
-    gdata \
-    git2r \
-    gtable \
-    highr \
-    htmltools \
-    iterators \
-    jsonlite \
-    labeling \
-    lattice \
-    lubridate \
-    markdown \
-    MCMCglmm \
-    memoise  \
-    munsell \
-    nlme \
-    NLP \
-    nnet \
-    phylobase \
-    plyr \
-    praise \
-    R.cache \
-    R.methodsS3 \
-    R.oo \
-    R.utils \
-    R6 \
-    RColorBrewer \
-    Rcpp \
-    readxl \
-    rentrez \
-    reshape \
-    reshape2 \
-    rex \
-    rjson \
-    rmarkdown \
-    RNeXML \
-    rncl \
-    roxygen2 \
-    rotl \
-    rplos \
-    rredis \
-    rstudioapi \
-    rversions \
-    scales \
-    slam \
-    solr \
-    survival \
-    taxize \
-    tensorA \
-    tidyr \
-    tidyverse \
-    tm   \
-    uuid \
-    XML \
-    yaml \
-    && rm -rf /tmp/downloaded_packages/ /tmp/*.rds
+RUN RD -e 'install.packages(c("devtools", "remotes", "git2r", "knitr", "rmarkdown", "testthat", "xml2", "ade4", "ape", "aRxiv", "assertthat", "bibtex", "bitops", "bold", "brew", "caTools", "chron", "coda", "codetools", "colorspace", "corpcor", "crayon", "cubature", "data.table", "DBI", "devtools", "evaluate", "dichromat", "dplyr", "foreach", "formatR", "fulltext", "ggplot2", "gdata", "git2r", "gtable", "highr", "htmltools", "iterators", "jsonlite", "labeling", "lattice", "lubridate", "markdown", "MCMCglmm", "memoise", "munsell", "nlme", "NLP", "nnet", "phylobase", "plyr", "praise", "R.cache", "R.methodsS3", "R.oo", "R.utils", "R6", "RColorBrewer", "Rcpp", "readxl", "rentrez", "reshape", "reshape2", "rex", "rjson", "rmarkdown", "RNeXML", "rncl", "roxygen2", "rotl", "rplos", "rredis", "rstudioapi", "rversions", "scales", "slam", "solr", "survival", "taxize", "tensorA", "tidyr", "tidyverse", "tm", "uuid", "XML", "yaml"), repos=c(CRAN = "http://cloud.r-project.org", bioc="http://www.bioconductor.org/packages/release/bioc"))'
 
 ## For some reason, lattice in non standard location is also needed:
 RUN LIBLOC=/usr/local/lib/R/library install2.r lattice
